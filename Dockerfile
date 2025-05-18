@@ -1,4 +1,3 @@
-
 # Build stage
 FROM maven:3.9.4-eclipse-temurin-21 AS builder
 WORKDIR /app
@@ -13,7 +12,7 @@ COPY pom.xml ./
 COPY src ./src/
 
 # Build using Maven Wrapper with cache
-RUN --mount=type=cache,id=maven-cache \
+RUN --mount=type=cache,id=maven-repo:/root/.m2/repository \
     ./mvnw clean package -DskipTests
 
 # Runtime stage
