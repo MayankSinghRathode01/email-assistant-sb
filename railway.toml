@@ -2,9 +2,3 @@
 builder = "DOCKERFILE"
 dockerfilePath = "Dockerfile"
 
-[deploy]
-restartPolicyType = "ON_FAILURE"
-numReplicas = 1
-sleepApplication = false
-healthcheckPath = "/"
-healthcheckTimeout = 300
