@@ -1,0 +1,9 @@
+
+[build]
+builder = "nixpacks"
+buildCommand = "chmod +x ./mvnw && ./mvnw package -DskipTests"
+
+[deploy]
+startCommand = "java -jar target/*.jar"
+healthcheckPath = "/"
+healthcheckTimeout = 100
