@@ -1,9 +1,10 @@
-
 [build]
-builder = "nixpacks"
-buildCommand = "chmod +x ./mvnw && ./mvnw package -DskipTests"
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
 
 [deploy]
-startCommand = "java -jar target/*.jar"
+restartPolicyType = "ON_FAILURE"
+numReplicas = 1
+sleepApplication = false
 healthcheckPath = "/"
-healthcheckTimeout = 100
+healthcheckTimeout = 300
